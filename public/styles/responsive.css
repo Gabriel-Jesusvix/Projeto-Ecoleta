@@ -1,0 +1,40 @@
+/* Para tirar o "encavalamento do conteudo quando a tela ir dimunuindo ou aumentando */
+@media (max-widht: 900px) {
+    #page-home{
+        background-position: 70vw;
+    }
+
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a {
+        position: absolute;
+        bottom: 48px;
+
+        left: 50px;
+        transform: translate(-50%);
+    }
+    page-home main{
+        align-items: center;
+    }
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Regras de responsividade para adaptações de telas! */
+
+
+@media(min-widht: 1700px){
+    #page-home{
+        background-position: 70vw;
+    }
+}
+
+@media (max-height: 760px){
+    #page-home{
+        background-position-y: 200px;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resulado da Pesquisa</title>
+    <!-- LINKS FONTES.   (Fonts.google.com) -->
+    <link href="https://fonts.googleapis.com/css2?family=Robot&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    
+    
+    <!-- Estilização styles em outro arquivo.-->
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/search-results.css">
+    
+    <link rel="stylesheet" href="/styles/responsive.css">
+    
+    
+</head>
+<body>
+    <div id="page-search-results">
+            
+        {%include "partials/page-header.html" %}
+
+           <main>
+
+           {% if total > 0 %}
+
+                <h4>
+                    <strong> {{ total }} pontos encontrados</strong>
+                </h4>
+
+                <div class="cards">
+
+                    {% for palce in places %}
+
+                    <div class="card">
+                        <img src="{{ places.image}}" alt="{{ places.name}}">
+                        <h1>{{ places.name}}</h1>
+                        <h3>{{ places.items}}</h3>
+                        <p>
+                            {{ places.city}}, {{ places.state}} <br/>
+                            {{ places.address}} <br/>
+                            {{ places.address2}} 
+                        </p>
+                    </div>
+                </div>
+
+           {%else%} 
+            <h4><strong>Nenhum</strong> local encontrado</h4>
+           {% endif %}
+
+
+        {% endfor %}
+
+           </main>
+
+           
+            
+        
+
+
+        </div>     
+</body>
+</html>
